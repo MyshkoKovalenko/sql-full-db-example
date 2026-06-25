@@ -22,20 +22,19 @@ erDiagram
 
     FLIGHT_PASSENGERS {
         INT flight_id
-        INT passenger_id
+        UUID passenger_uuid
     }
 
     AIRCRAFTS {
         INT model_id
         VARCHAR tail_number
-        INT current_airport_id
+        INT location_airport_id
     }
 
     AIRCRAFT_MODELS {
         VARCHAR model
         VARCHAR manufacturer
         INT max_passengers
-        INT max_distance
     }
 
     PILOTS {
@@ -47,7 +46,7 @@ erDiagram
     }
 
     AIRPORTS {
-        VARCHAR name
+        VARCHAR code
         INT location_id
     }
 
