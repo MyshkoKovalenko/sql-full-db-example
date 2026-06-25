@@ -45,6 +45,7 @@ CREATE TABLE IF NOT EXISTS airports (
 
 CREATE TABLE IF NOT EXISTS aircrafts (
     id SERIAL PRIMARY KEY,
+    model_id INT REFERENCES aircraft_models(id),
     tail_number VARCHAR,
     location_airport_id INT REFERENCES airports(id)
 );
