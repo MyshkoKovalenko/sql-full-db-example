@@ -40,4 +40,4 @@ SELECT
     'John',
     'Doe #' || i,
     '+1-555-' || i
-FROM generate_series(1, 500000) as i;
+FROM generate_series(1, 1000000) as i;

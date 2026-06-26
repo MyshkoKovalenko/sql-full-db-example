@@ -15,3 +15,6 @@ CALL schedule_flight(2, '2026-06-28 03:20:00');
 CALL schedule_flight(1, '2026-06-29 13:45:00');
 
 SELECT * FROM schedule_view;
+
+EXPLAIN ANALYZE
+SELECT * FROM top_10_passengers;

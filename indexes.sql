@@ -1,0 +1,21 @@
+DROP INDEX IF EXISTS ptr_airport_location;
+DROP INDEX IF EXISTS ptr_aircraft_models;
+DROP INDEX IF EXISTS ptr_aircraft_location;
+DROP INDEX IF EXISTS ptr_flight_departure;
+DROP INDEX IF EXISTS ptr_flight_destination;
+DROP INDEX IF EXISTS ptr_flight_aircraft;
+DROP INDEX IF EXISTS ptr_flight_pilot;
+DROP INDEX IF EXISTS ptr_flight_passengers_flight;
+DROP INDEX IF EXISTS ptr_flight_passengers_passenger;
+DROP INDEX IF EXISTS ptr_schedule_flight;
+
+CREATE INDEX IF NOT EXISTS ptr_airport_location ON airports(location_id);
+CREATE INDEX IF NOT EXISTS ptr_aircraft_models ON aircrafts(model_id);
+CREATE INDEX IF NOT EXISTS ptr_aircraft_location ON aircrafts(location_airport_id);
+CREATE INDEX IF NOT EXISTS ptr_flight_departure ON flights(departure_airport_id);
+CREATE INDEX IF NOT EXISTS ptr_flight_destination ON flights(destination_airport_id);
+CREATE INDEX IF NOT EXISTS ptr_flight_aircraft ON flights(aircraft_id);
+CREATE INDEX IF NOT EXISTS ptr_flight_pilot ON flights(pilot_id);
+CREATE INDEX IF NOT EXISTS ptr_flight_passengers_flight ON flight_passengers(flight_id);
+CREATE INDEX IF NOT EXISTS ptr_flight_passengers_passenger ON flight_passengers(passenger_uuid);
+CREATE INDEX IF NOT EXISTS ptr_schedule_flight ON flight_passengers(flight_id);
